@@ -41,6 +41,20 @@ void			error(char *s)
 	exit(1);
 }
 
+void	free_lemin(t_lemin ** lemin)
+{
+	if (*lemin)
+	{
+		free_ants(&(*lemin)->ants);
+		free_pos(&(*lemin)->pos);
+		free_routes(&(*lemin)->routes);
+		free_links(&(*lemin)->links);
+		free_rooms(&(*lemin)->rooms);
+		free((*lemin));
+		*lemin = NULL;
+	}
+}
+
 int				main(void)
 {
 	char	*str;
@@ -59,6 +73,6 @@ int				main(void)
 	create_routes(lemin);
 	ft_printf("%s\n", farm);
 	move_ants(lemin);
-	// free_lemin(&lemin);
+	free_lemin(&lemin);
 	return (0);
 }

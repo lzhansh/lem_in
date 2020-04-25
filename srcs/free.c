@@ -25,3 +25,65 @@ void	free_strsplit(char ***strsplit)
 		(*strsplit) = NULL;
 	}
 }
+
+void	free_ants(t_ant **a)
+{
+	t_ant	*tmp;
+
+	while (*a)
+	{
+		tmp = (*a);
+		(*a) = (*a)->next;
+		free(tmp);
+	}
+}
+
+void	free_pos(t_pos **p)
+{
+	t_pos	*tmp;
+
+	while (*p)
+	{
+		tmp = (*p);
+		*p = (*p)->next;
+		free(tmp);
+	}
+}
+
+void	free_routes(t_route **r)
+{
+	t_route	*tmp;
+
+	while (*r)
+	{
+		tmp = (*r);
+		*r = (*r)->next;
+		free_links(&(tmp->head));
+		free(tmp);
+	}
+}
+
+void	free_links(t_link **p)
+{
+	t_link *tmp;
+
+	while (*p)
+	{
+		tmp = (*p);
+		*p = (*p)->next;
+		free(tmp);
+	}
+}
+
+void	free_rooms(t_room **p)
+{
+	t_room *tmp;
+
+	while (*p)
+	{
+		tmp = (*p);
+		*p = (*p)->next;
+		free(tmp->name);
+		free(tmp);
+	}
+}

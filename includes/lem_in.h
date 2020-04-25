@@ -12,11 +12,13 @@
 
 #ifndef LEM_IN_H
 # define LEM_IN_H
+
 # include "libft.h"
 # include <stdbool.h>
 # include <stdlib.h>
 # include <stdio.h>
 # include <errno.h>
+
 # define ANT_ERROR "Error: Number of ants should be positive int"
 # define GNL_ERROR "Error: Cannot read the file"
 # define INIT_ERROR	"Error: Initialization problem"
@@ -142,5 +144,5 @@ void				remove_i_link(t_lemin *lemin, t_room *room);
 t_link				*find_link(t_lemin *lemin, t_room *s, t_room *e);
 
 void				set_levels(t_lemin *lemin);
-
+void				free_ants(t_ant **a);
 #endif
