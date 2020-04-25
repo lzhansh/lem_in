@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/21 10:53:03 by lzhansha          #+#    #+#             */
-/*   Updated: 2020/04/25 13:28:22 by marvin           ###   ########.fr       */
+/*   Updated: 2020/04/25 15:47:19 by lzhansha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,8 +82,8 @@ void	ft_print_digits_width(t_list *env)
 	i = -1;
 	len = ((int)ft_strlen(env->out) > env->flag.prec ?
 		(int)ft_strlen(env->out) : env->flag.prec);
-	(env->flag.neg || env->flag.plus || env->flag.sp) ?
-		(int)env->flag.width-- : 0;
+//	if (env->flag.neg || env->flag.plus || env->flag.sp)
+//		(int)env->flag.width--;
 	if (env->flag.prec >= 0)
 	{
 		while (env->flag.width - ++i > len)

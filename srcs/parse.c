@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/25 12:33:07 by marvin            #+#    #+#             */
-/*   Updated: 2020/04/25 12:33:07 by marvin           ###   ########.fr       */
+/*   Updated: 2020/04/25 15:48:26 by lzhansha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,8 @@ int				parse_ants(char **farm)
 {
 	char *str;
 	int ants;
-	 
+
+	ants = 0;	
 	if (get_next_line(0, &str) > 0)
 	{
 		*farm = ft_strdup(str);

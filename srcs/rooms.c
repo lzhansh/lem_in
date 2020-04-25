@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/25 12:33:34 by marvin            #+#    #+#             */
-/*   Updated: 2020/04/25 12:33:34 by marvin           ###   ########.fr       */
+/*   Updated: 2020/04/25 15:49:16 by lzhansha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ t_room	*create_room(char *str, t_type type)
 	char **line;
 	int num;
 
+	line = NULL;
 	if (!(r = (t_room *)malloc(sizeof(t_room))) ||
 		!(line = ft_strsplit(str, ' ', &num)))
 		error(ROOM_ERROR);
