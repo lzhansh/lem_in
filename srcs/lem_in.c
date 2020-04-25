@@ -45,11 +45,11 @@ void	free_lemin(t_lemin ** lemin)
 {
 	if (*lemin)
 	{
-		free_ants(&(*lemin)->ants);
-		free_pos(&(*lemin)->pos);
-		free_routes(&(*lemin)->routes);
-		free_links(&(*lemin)->links);
-		free_rooms(&(*lemin)->rooms);
+		free_ants(&((*lemin)->ants));
+		free_pos(&((*lemin)->pos));
+		free_routes(&((*lemin)->routes));
+		free_links(&((*lemin)->links));
+		free_rooms(&((*lemin)->rooms));
 		free((*lemin));
 		*lemin = NULL;
 	}
