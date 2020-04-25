@@ -90,7 +90,7 @@ static void		add_route(t_lemin *lemin, t_route *route)
 		lemin->routes = route;
 }
 
-void				create_routes(t_lemin *lemin)
+void			create_routes(t_lemin *lemin)
 {
 	t_route	*route;
 	t_link	*link;

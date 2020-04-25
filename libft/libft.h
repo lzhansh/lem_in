@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/04/25 13:26:11 by marvin            #+#    #+#             */
+/*   Updated: 2020/04/25 13:26:11 by marvin           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 
@@ -77,7 +89,6 @@ char				*ft_ltoa(long n, int base);
 void				ft_strupper(char *str);
 void				ft_strlower(char *str);
 char				*ft_ftoa(long double ld);
-// char				*unsigned_itoa_base(uint32_t n, int base);
 int					get_next_line(const int fd, char **line);
 
 typedef struct		s_flag

@@ -32,7 +32,7 @@ static t_lemin	*init_lemin(void)
 	return (lem);
 }
 
-void	error(char *s)
+void			error(char *s)
 {
 	if (errno == 0)
 		ft_putendl_fd(s, 2);

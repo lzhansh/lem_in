@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_digits.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lzhansha <lzhansha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/21 10:53:03 by lzhansha          #+#    #+#             */
-/*   Updated: 2019/10/22 16:41:58 by lzhansha         ###   ########.fr       */
+/*   Updated: 2020/04/25 13:28:22 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,9 +80,10 @@ void	ft_print_digits_width(t_list *env)
 	int	i;
 
 	i = -1;
-	len = ((int)ft_strlen(env->out) > env->flag.prec ? (int)ft_strlen(env->out) :
-	env->flag.prec);
-	(env->flag.neg || env->flag.plus || env->flag.sp) ? (int)env->flag.width-- : 0;
+	len = ((int)ft_strlen(env->out) > env->flag.prec ?
+		(int)ft_strlen(env->out) : env->flag.prec);
+	(env->flag.neg || env->flag.plus || env->flag.sp) ?
+		(int)env->flag.width-- : 0;
 	if (env->flag.prec >= 0)
 	{
 		while (env->flag.width - ++i > len)

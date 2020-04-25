@@ -11,28 +11,28 @@
 /* ************************************************************************** */
 
 #ifndef LEM_IN_H
-#define LEM_IN_H
+# define LEM_IN_H
 
-#include "libft.h"
-#include <stdbool.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <errno.h>
+# include "libft.h"
+# include <stdbool.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include <errno.h>
 
-# define			ANT_ERROR	"Error: Number of ants should be positive int"
-# define			GNL_ERROR	"Error: Cannot read the file"
-# define			INIT_ERROR	"Error: Initialization problem"
-# define			ROOM_ERROR	"Error: Invalid room"
-# define			ROOM2_ERROR	"Error: No mandatory comments"
-# define			LINK_ERROR	"Error: Invalid link"
-# define			PATH_ERROR	"Error: There is no valid solution"
-# define			MOVE_ERROR	"Error: Cannot move the ants"
+# define ANT_ERROR "Error: Number of ants should be positive int"
+# define GNL_ERROR "Error: Cannot read the file"
+# define INIT_ERROR	"Error: Initialization problem"
+# define ROOM_ERROR "Error: Invalid room"
+# define ROOM2_ERROR "Error: No mandatory comments"
+# define LINK_ERROR "Error: Invalid link"
+# define PATH_ERROR "Error: There is no valid solution"
+# define MOVE_ERROR "Error: Cannot move the ants"
 
 typedef enum
 {
-	START,
-	MIDDLE,
-	END
+					START,
+					MIDDLE,
+					END
 }					t_type;
 
 typedef struct		s_room
@@ -118,15 +118,15 @@ bool				is_valid_comment(char *str);
 bool				is_room(char *str);
 bool				is_link(t_lemin *lemin, char *str);
 t_room				*room_name(t_lemin *lemin, char *str);
-			
+
 void				create_routes(t_lemin *lemin);
-			
+
 t_link				*create_link(t_lemin *lemin, char *str);
 void				add_link(t_lemin *lemin, t_link *link);
-void				check_links(t_lemin* lemin);
-			
+void				check_links(t_lemin *lemin);
+
 void				move_ants(t_lemin *lemin);
-			
+
 void				free_positions(t_pos **pos);
 t_pos				*new_position(int ant, t_room *room);
 void				add_position(t_lemin *lemin, t_pos *pos);
