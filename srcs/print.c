@@ -12,7 +12,7 @@
 
 #include "lem_in.h"
 
-void	print_ans(t_lemin *lemin)
+void print_ans(t_lemin *lemin)
 {
 	t_pos	*pos;
 

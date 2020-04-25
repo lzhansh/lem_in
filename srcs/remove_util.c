@@ -65,13 +65,11 @@ static int	len_route(t_lemin *lemin, t_link *link, int len)
 void		remove_o_link(t_lemin *lemin, t_room *room)
 {
 	t_link	*cur;
-	// t_link	*tmp;
 	int		min;
 	int		len;
 
 	cur = lemin->links;
 	min = INT_MAX;
-	// tmp = NULL;
 	while (cur && room->output > 1)
 	{
 		if (cur->start == room)
@@ -80,7 +78,6 @@ void		remove_o_link(t_lemin *lemin, t_room *room)
 			if (min > len)
 			{
 				min = len;
-				// tmp = cur;
 			}
 		}
 		cur = cur->next;
