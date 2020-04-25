@@ -6,13 +6,13 @@
 /*   By: lzhansha <lzhansha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/09 11:21:40 by lzhansha          #+#    #+#             */
-/*   Updated: 2019/11/25 15:11:06 by lzhansha         ###   ########.fr       */
+/*   Updated: 2020/04/25 14:05:22 by lzhansha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_wordcount(char const *s, char c)
+int			ft_wordcount(char const *s, char c)
 {
 	int num;
 	int i;

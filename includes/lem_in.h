@@ -3,22 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   lem_in.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lzhansha </var/mail/lzhansha>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/25 12:24:53 by marvin            #+#    #+#             */
-/*   Updated: 2020/04/25 12:24:53 by marvin           ###   ########.fr       */
+/*   Created: 2020/04/25 14:03:37 by lzhansha          #+#    #+#             */
+/*   Updated: 2020/04/25 14:03:42 by lzhansha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LEM_IN_H
 # define LEM_IN_H
-
 # include "libft.h"
 # include <stdbool.h>
 # include <stdlib.h>
 # include <stdio.h>
 # include <errno.h>
-
 # define ANT_ERROR "Error: Number of ants should be positive int"
 # define GNL_ERROR "Error: Cannot read the file"
 # define INIT_ERROR	"Error: Initialization problem"
@@ -30,10 +28,10 @@
 
 typedef enum
 {
-					START,
-					MIDDLE,
-					END
-}					t_type;
+	START,
+	MIDDLE,
+	END
+}	t_type;
 
 typedef struct		s_room
 {
