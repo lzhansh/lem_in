@@ -1,18 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lzhansha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/25 13:26:11 by marvin            #+#    #+#             */
-/*   Updated: 2020/04/25 13:26:11 by marvin           ###   ########.fr       */
+/*   Created: 2019/04/30 14:04:16 by lzhansha          #+#    #+#             */
+/*   Updated: 2019/05/07 14:41:09 by lzhansha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
@@ -21,7 +20,6 @@
 # include <fcntl.h>
 # include <sys/types.h>
 # include <sys/uio.h>
-
 # define FLAGS "-+ #*.0123456789hlLz"
 # define BUFF_SIZE 1
 
