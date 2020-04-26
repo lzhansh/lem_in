@@ -30,11 +30,14 @@ void	free_ants(t_ant **a)
 {
 	t_ant	*tmp;
 
-	while ((*a))
+	if (a)
 	{
-		tmp = (*a);
-		(*a) = (*a)->next;
-		free(tmp);
+		while ((*a))
+		{
+			tmp = (*a);
+			(*a) = (*a)->next;
+			free(tmp);
+		}
 	}
 }
 
@@ -42,12 +45,15 @@ void	free_routes(t_route **r)
 {
 	t_route	*tmp;
 
-	while ((*r))
+	if (r)
 	{
-		tmp = (*r);
-		(*r) = (*r)->next;
-		free_links(&(tmp->head));
-		free(tmp);
+		while ((*r))
+		{
+			tmp = (*r);
+			(*r) = (*r)->next;
+			free_links(&(tmp->head));
+			free(tmp);
+		}
 	}
 }
 
@@ -55,11 +61,14 @@ void	free_links(t_link **p)
 {
 	t_link *tmp;
 
-	while ((*p))
+	if (p)
 	{
-		tmp = (*p);
-		(*p) = (*p)->next;
-		free(tmp);
+		while ((*p))
+		{
+			tmp = (*p);
+			(*p) = (*p)->next;
+			free(tmp);
+		}
 	}
 }
 
@@ -67,11 +76,14 @@ void	free_rooms(t_room **p)
 {
 	t_room *tmp;
 
-	while ((*p))
+	if (p)
 	{
-		tmp = (*p);
-		(*p) = (*p)->next;
-		free(tmp->name);
-		free(tmp);
+		while ((*p))
+		{
+			tmp = (*p);
+			(*p) = (*p)->next;
+			free(tmp->name);
+			free(tmp);
+		}
 	}
 }
