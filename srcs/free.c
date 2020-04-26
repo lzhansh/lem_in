@@ -30,7 +30,7 @@ void	free_ants(t_ant **a)
 {
 	t_ant	*tmp;
 
-	while (*a)
+	while ((*a))
 	{
 		tmp = (*a);
 		(*a) = (*a)->next;
@@ -38,23 +38,23 @@ void	free_ants(t_ant **a)
 	}
 }
 
-void	free_pos(t_pos **p)
-{
-	t_pos	*tmp;
+// void	free_pos(t_pos **p)
+// {
+// 	t_pos	*tmp;
 
-	while (*p)
-	{
-		tmp = (*p);
-		(*p) = (*p)->next;
-		free(tmp);
-	}
-}
+// 	while (*p)
+// 	{
+// 		tmp = (*p);
+// 		(*p) = (*p)->next;
+// 		free(tmp);
+// 	}
+// }
 
 void	free_routes(t_route **r)
 {
 	t_route	*tmp;
 
-	while (*r)
+	while ((*r))
 	{
 		tmp = (*r);
 		(*r) = (*r)->next;
@@ -67,7 +67,7 @@ void	free_links(t_link **p)
 {
 	t_link *tmp;
 
-	while (*p)
+	while ((*p))
 	{
 		tmp = (*p);
 		(*p)= (*p)->next;
@@ -79,7 +79,7 @@ void	free_rooms(t_room **p)
 {
 	t_room *tmp;
 
-	while (*p)
+	while ((*p))
 	{
 		tmp = (*p);
 		(*p) = (*p)->next;

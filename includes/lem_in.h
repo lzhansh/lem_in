@@ -147,7 +147,7 @@ void				set_levels(t_lemin *lemin);
 void				free_ants(t_ant **a);
 void				free_links(t_link **p);
 void				free_routes(t_route **p);
-void				free_pos(t_pos **p);
+// void				free_pos(t_pos **p);
 void				free_rooms(t_room **p);
 
 #endif

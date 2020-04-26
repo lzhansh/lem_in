@@ -65,6 +65,21 @@ static void		set_util(t_lemin *lemin, t_queue **q, t_room *room)
 	}
 }
 
+void			free_queue(t_queue	**q)
+{
+	t_queue *tmp;
+
+	if (q)
+	{
+		while (*q)
+		{
+			tmp = (*q);
+			(*q) = (*q)->next;
+			free(tmp);
+		}
+	}
+}
+
 void			set_levels(t_lemin *lemin)
 {
 	t_queue	*cur;
@@ -86,4 +101,5 @@ void			set_levels(t_lemin *lemin)
 			lemin->end->level = INT_MAX;
 		free(cur);
 	}
+	free_queue(&q);
 }
