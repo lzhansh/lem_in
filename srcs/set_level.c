@@ -65,7 +65,7 @@ static void		set_util(t_lemin *lemin, t_queue **q, t_room *room)
 	}
 }
 
-void			free_queue(t_queue	**q)
+void			free_queue(t_queue **q)
 {
 	t_queue *tmp;
 

@@ -68,7 +68,7 @@ static void	count_links(t_lemin *lemin)
 	}
 }
 
-void		check_links(t_lemin* lemin)
+void		check_links(t_lemin *lemin)
 {
 	t_link	*l;
 

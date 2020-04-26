@@ -58,7 +58,7 @@ void	free_links(t_link **p)
 	while ((*p))
 	{
 		tmp = (*p);
-		(*p)= (*p)->next;
+		(*p) = (*p)->next;
 		free(tmp);
 	}
 }

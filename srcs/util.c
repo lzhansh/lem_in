@@ -28,9 +28,9 @@ bool	is_valid_comment(char *str)
 
 bool	is_room(char *str)
 {
-	char **line;
-	bool res;
-	int num;
+	char	**line;
+	bool	res;
+	int		num;
 
 	res = false;
 	if (!(line = ft_strsplit(str, ' ', &num)))
@@ -59,11 +59,11 @@ t_room	*room_name(t_lemin *lemin, char *str)
 
 bool	is_link(t_lemin *lemin, char *str)
 {
-	char **line;
-	int num;
-	bool res;
-   
-	res	= false;
+	char	**line;
+	int		num;
+	bool	res;
+
+	res = false;
 	if (!(line = ft_strsplit(str, '-', &num)))
 		error(LINK_ERROR);
 	if (num == 2 && room_name(lemin, line[0])

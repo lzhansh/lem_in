@@ -24,7 +24,7 @@ static t_type	parse_comment(char *str)
 void			parse_link(t_lemin *lemin, char *str, char **farm)
 {
 	t_link *link;
-	(void)farm;
+	
 	add_link(lemin, (link = create_link(lemin, str)));
 	ft_strdel(&str);
 	while (get_next_line(0, &str) > 0)
@@ -44,13 +44,15 @@ void			parse_link(t_lemin *lemin, char *str, char **farm)
 	}
 	if (!lemin->links)
 		error(LINK_ERROR);
+	if (!lemin->start || !lemin->end)
+		error(ROOM2_ERROR);
 }
 
 void			parse_rooms(t_lemin *lemin, char **farm)
 {
 	t_room	*room;
 	t_type	type;
-	char *str;
+	char	*str;
 	
 	type = MIDDLE;
 	while (get_next_line(0, &str) > 0)
@@ -58,37 +60,29 @@ void			parse_rooms(t_lemin *lemin, char **farm)
 		*farm = ft_strcat(*farm, str);
 		*farm = ft_strcat(*farm, "\n");
 		if (is_comment(str))
-		{
 			if (is_valid_comment(str))
 				type = parse_comment(str);
-		}
 		else if (is_room(str))
 		{
 			add_room(lemin, (room = create_room(str, type)));
 			type = MIDDLE;
 		}
 		else if (is_link(lemin, str))
-		{
 			parse_link(lemin, str, farm);
-			break ;
-		}
 		else
 			error("Error: Invalid data");
-		if ((lemin->start && type == START) ||
-			(lemin->end && type == END))
+		if ((lemin->start && type == START) || (lemin->end && type == END))
 			error(ROOM_ERROR);
 		ft_strdel(&str);
 	}
-	if (!lemin->start || !lemin->end)
-		error(ROOM2_ERROR);
 }
 
 int				parse_ants(char **farm)
 {
-	char *str;
-	int ants;
-	(void)farm;
-	ants = 0;	
+	char	*str;
+	int		ants;
+
+	ants = 0;
 	if (get_next_line(0, &str) > 0)
 	{
 		*farm = ft_strcat(*farm, str);
@@ -101,4 +95,4 @@ int				parse_ants(char **farm)
 	else
 		error(GNL_ERROR);
 	return (ants);
-}	
+}

@@ -27,7 +27,7 @@ static void	move_next(t_lemin *lemin, t_route *route)
 			link->start->ant = -1;
 			lemin->ants_end++;
 		}
-		else if(link->start->ant != -1)
+		else if (link->start->ant != -1)
 		{
 			add_position(lemin, new_position(link->start->ant, link->end));
 			link->end->ant = link->start->ant;
@@ -66,7 +66,8 @@ static void	move_start(t_lemin *lemin, t_route *route)
 		lemin->ants_start--;
 		lemin->ant_idx++;
 		route->head->end->ant = lemin->ant_idx;
-		add_position(lemin, new_position(route->head->end->ant, route->head->end));
+		add_position(lemin,
+			new_position(route->head->end->ant, route->head->end));
 	}
 }
 

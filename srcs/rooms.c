@@ -14,9 +14,9 @@
 
 t_room	*create_room(char *str, t_type type)
 {
-	t_room *r;
-	char **line;
-	int num;
+	t_room	*r;
+	char	**line;
+	int		num;
 
 	line = NULL;
 	if (!(r = (t_room *)malloc(sizeof(t_room))) ||
@@ -43,7 +43,7 @@ void	check_room(t_lemin *lemin, t_room *room)
 	while (tmp)
 	{
 		if (!ft_strcmp(tmp->name, room->name) ||
-		(tmp->x ==  room->x && tmp->y == room->y))
+		(tmp->x == room->x && tmp->y == room->y))
 			error(ROOM_ERROR);
 		tmp = tmp->next;
 	}
