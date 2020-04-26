@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/25 12:33:07 by marvin            #+#    #+#             */
-/*   Updated: 2020/04/25 18:23:39 by lzhansha         ###   ########.fr       */
+/*   Updated: 2020/04/25 18:47:22 by lzhansha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,10 @@ void			parse_rooms(t_lemin *lemin, char **farm)
 		*farm = ft_strcat(*farm, str);
 		*farm = ft_strcat(*farm, "\n");
 		if (is_comment(str))
+		{
 			if (is_valid_comment(str))
 				type = parse_comment(str);
+		}
 		else if (is_room(str))
 		{
 			add_room(lemin, (room = create_room(str, type)));
