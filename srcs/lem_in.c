@@ -47,9 +47,9 @@ void			free_lemin(t_lemin **lemin)
 	{
 		free_ants(&((*lemin)->ants));
 		free_positions(&((*lemin)->pos));
-		free_routes(&((*lemin)->routes));
-		free_links(&((*lemin)->links));
-		free_rooms(&((*lemin)->rooms));
+		// free_routes(&((*lemin)->routes));
+		// free_links(&((*lemin)->links));
+		// free_rooms(&((*lemin)->rooms));
 		free((*lemin));
 		*lemin = NULL;
 	}
