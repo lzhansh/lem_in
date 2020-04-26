@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   lem_in.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lzhansha <lzhansha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 13:44:39 by lzhansha          #+#    #+#             */
-/*   Updated: 2019/10/22 16:42:31 by lzhansha         ###   ########.fr       */
+/*   Updated: 2020/04/25 17:12:26 by lzhansha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,10 @@ int				main(void)
 	check_links(lemin);
 	create_routes(lemin);
 	ft_printf("%s\n", farm);
-	free(farm);
+	ft_strdel(&farm);
+	ft_strdel(&str);
 	move_ants(lemin);
 	free_lemin(&lemin);
+	while (1) ;
 	return (0);
 }

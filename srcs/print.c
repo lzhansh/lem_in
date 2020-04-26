@@ -6,13 +6,13 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/25 12:33:14 by marvin            #+#    #+#             */
-/*   Updated: 2020/04/25 12:33:14 by marvin           ###   ########.fr       */
+/*   Updated: 2020/04/25 16:15:06 by lzhansha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-void print_ans(t_lemin *lemin)
+void	print_ans(t_lemin *lemin)
 {
 	t_pos	*pos;
 
