@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/25 12:33:48 by marvin            #+#    #+#             */
-/*   Updated: 2020/04/25 12:33:48 by marvin           ###   ########.fr       */
+/*   Updated: 2020/04/25 17:52:20 by lzhansha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,14 @@ bool	is_link(t_lemin *lemin, char *str)
 {
 	char **line;
 	int num;
-
+	bool res;
+   
+	res	= false;
 	if (!(line = ft_strsplit(str, '-', &num)))
 		error(LINK_ERROR);
 	if (num == 2 && room_name(lemin, line[0])
 		&& room_name(lemin, line[1]))
-		return (true);
-	return (false);
+		res = true;
+	free_strsplit(&line);
+	return (res);
 }

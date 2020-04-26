@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lem_in.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lzhansha <lzhansha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lzhansha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/05 13:44:39 by lzhansha          #+#    #+#             */
-/*   Updated: 2020/04/25 17:12:26 by lzhansha         ###   ########.fr       */
+/*   Created: 2020/04/25 18:26:40 by lzhansha          #+#    #+#             */
+/*   Updated: 2020/04/25 18:28:21 by lzhansha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,9 @@ void			free_lemin(t_lemin **lemin)
 	{
 		free_ants(&((*lemin)->ants));
 		free_positions(&((*lemin)->pos));
-		// free_routes(&((*lemin)->routes));
-		// free_links(&((*lemin)->links));
-		// free_rooms(&((*lemin)->rooms));
+		free_routes(&((*lemin)->routes));
+		free_links(&((*lemin)->links));
+		free_rooms(&((*lemin)->rooms));
 		free((*lemin));
 		*lemin = NULL;
 	}
@@ -60,7 +60,7 @@ int				main(void)
 	t_lemin	*lemin;
 	char	*farm;
 
-	farm = NULL;
+	farm = (char *)malloc(sizeof(char) * 10000);
 	lemin = init_lemin();
 	lemin->ants_start = parse_ants(&farm);
 	parse_rooms(lemin, &farm);
@@ -73,6 +73,5 @@ int				main(void)
 	ft_strdel(&farm);
 	move_ants(lemin);
 	free_lemin(&lemin);
-	while (1) ;
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/25 12:33:07 by marvin            #+#    #+#             */
-/*   Updated: 2020/04/25 15:48:26 by lzhansha         ###   ########.fr       */
+/*   Updated: 2020/04/25 18:23:39 by lzhansha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ static t_type	parse_comment(char *str)
 void			parse_link(t_lemin *lemin, char *str, char **farm)
 {
 	t_link *link;
-
+	(void)farm;
 	add_link(lemin, (link = create_link(lemin, str)));
 	ft_strdel(&str);
 	while (get_next_line(0, &str) > 0)
 	{
-		*farm = ft_strjoin(*farm, str);
-		*farm = ft_strjoin(*farm, "\n");
+		*farm = ft_strcat(*farm, str);
+		*farm = ft_strcat(*farm, "\n");
 		if (!is_link(lemin, str))
 		{
 			if (!is_comment(str))
@@ -51,12 +51,12 @@ void			parse_rooms(t_lemin *lemin, char **farm)
 	t_room	*room;
 	t_type	type;
 	char *str;
-
+	
 	type = MIDDLE;
 	while (get_next_line(0, &str) > 0)
 	{
-		*farm = ft_strjoin(*farm, str);
-		*farm = ft_strjoin(*farm, "\n");
+		*farm = ft_strcat(*farm, str);
+		*farm = ft_strcat(*farm, "\n");
 		if (is_comment(str))
 		{
 			if (is_valid_comment(str))
@@ -87,12 +87,12 @@ int				parse_ants(char **farm)
 {
 	char *str;
 	int ants;
-
+	(void)farm;
 	ants = 0;	
 	if (get_next_line(0, &str) > 0)
 	{
-		*farm = ft_strdup(str);
-		*farm = ft_strjoin(*farm, "\n");
+		*farm = ft_strcat(*farm, str);
+		ft_strcat(*farm, "\n");
 		if (str[0] == '-' || str[0] == '0' || !ft_isdigit(str[0]))
 			error(ANT_ERROR);
 		ants = ft_atoi(str);
