@@ -39,8 +39,8 @@ void			parse_link(t_lemin *lemin, char *str, char **farm)
 		else
 		{
 			add_link(lemin, (link = create_link(lemin, str)));
-			ft_strdel(&str);
 		}
+		ft_strdel(&str);
 	}
 	if (!lemin->links)
 		error(LINK_ERROR);

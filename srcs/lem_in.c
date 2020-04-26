@@ -41,7 +41,7 @@ void			error(char *s)
 	exit(1);
 }
 
-void	free_lemin(t_lemin ** lemin)
+void	free_lemin(t_lemin **lemin)
 {
 	if (*lemin)
 	{
@@ -72,6 +72,7 @@ int				main(void)
 	check_links(lemin);
 	create_routes(lemin);
 	ft_printf("%s\n", farm);
+	free(farm);
 	move_ants(lemin);
 	free_lemin(&lemin);
 	return (0);
