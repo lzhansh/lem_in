@@ -46,10 +46,11 @@ void			parse_link(t_lemin *lemin, char *str, char **farm)
 		error(LINK_ERROR);
 }
 
-void			parse_rooms(t_lemin *lemin, char *str, char **farm)
+void			parse_rooms(t_lemin *lemin, char **farm)
 {
 	t_room	*room;
 	t_type	type;
+	char *str;
 
 	type = MIDDLE;
 	while (get_next_line(0, &str) > 0)

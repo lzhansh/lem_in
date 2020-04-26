@@ -45,7 +45,7 @@ void	free_pos(t_pos **p)
 	while (*p)
 	{
 		tmp = (*p);
-		*p = (*p)->next;
+		(*p) = (*p)->next;
 		free(tmp);
 	}
 }
@@ -57,7 +57,7 @@ void	free_routes(t_route **r)
 	while (*r)
 	{
 		tmp = (*r);
-		*r = (*r)->next;
+		(*r) = (*r)->next;
 		free_links(&(tmp->head));
 		free(tmp);
 	}
@@ -70,7 +70,7 @@ void	free_links(t_link **p)
 	while (*p)
 	{
 		tmp = (*p);
-		*p = (*p)->next;
+		(*p)= (*p)->next;
 		free(tmp);
 	}
 }
@@ -82,7 +82,7 @@ void	free_rooms(t_room **p)
 	while (*p)
 	{
 		tmp = (*p);
-		*p = (*p)->next;
+		(*p) = (*p)->next;
 		free(tmp->name);
 		free(tmp);
 	}

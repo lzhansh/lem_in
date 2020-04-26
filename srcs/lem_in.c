@@ -41,7 +41,7 @@ void			error(char *s)
 	exit(1);
 }
 
-void	free_lemin(t_lemin **lemin)
+void			free_lemin(t_lemin **lemin)
 {
 	if (*lemin)
 	{
@@ -57,15 +57,13 @@ void	free_lemin(t_lemin **lemin)
 
 int				main(void)
 {
-	char	*str;
 	t_lemin	*lemin;
 	char	*farm;
 
-	str = NULL;
 	farm = NULL;
 	lemin = init_lemin();
 	lemin->ants_start = parse_ants(&farm);
-	parse_rooms(lemin, str, &farm);
+	parse_rooms(lemin, &farm);
 	set_levels(lemin);
 	if (lemin->end->level == -1)
 		error(PATH_ERROR);
@@ -73,7 +71,6 @@ int				main(void)
 	create_routes(lemin);
 	ft_printf("%s\n", farm);
 	ft_strdel(&farm);
-	ft_strdel(&str);
 	move_ants(lemin);
 	free_lemin(&lemin);
 	while (1) ;
