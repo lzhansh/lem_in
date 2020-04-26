@@ -46,7 +46,6 @@ void			free_lemin(t_lemin **lemin)
 	if (*lemin)
 	{
 		free_ants(&((*lemin)->ants));
-		free_positions(&((*lemin)->pos));
 		free_routes(&((*lemin)->routes));
 		free_links(&((*lemin)->links));
 		free_rooms(&((*lemin)->rooms));
@@ -59,11 +58,13 @@ int				main(void)
 {
 	t_lemin	*lemin;
 	char	*farm;
+	char	*str;
 
+	str = NULL;
 	farm = (char *)malloc(sizeof(char) * 10000);
 	lemin = init_lemin();
 	lemin->ants_start = parse_ants(&farm);
-	parse_rooms(lemin, &farm);
+	parse_rooms(lemin, str, &farm);
 	set_levels(lemin);
 	if (lemin->end->level == -1)
 		error(PATH_ERROR);

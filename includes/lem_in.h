@@ -101,7 +101,7 @@ typedef struct		s_lemin
 }					t_lemin;
 
 int					parse_ants(char **f);
-void				parse_rooms(t_lemin *lemin, char **f);
+void				parse_rooms(t_lemin *lemin, char *c, char **f);
 void				parse_link(t_lemin *lemin, char *str, char **f);
 
 t_room				*create_room(char *str, t_type type);
